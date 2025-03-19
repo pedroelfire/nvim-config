@@ -6,10 +6,19 @@ return require('packer').startup(function(use)
 	requires = { {'nvim-lua/plenary.nvim'} }
 }
 use({ 'rose-pine/neovim', as = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine') end })
+use({ "ellisonleao/gruvbox.nvim", as = 'gruvbox', config = function() vim.cmd('colorscheme gruvbox') end})
+use({ "folke/tokyonight.nvim", as = 'tokyonight', config = function() vim.cmd('colorscheme tokyonight') end})
 use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
-use('tpope/vim-fugitive'
+use('tpope/vim-fugitive')
+use ({
+  "kylechui/nvim-surround",
+  tag = "*", -- Usa la última versión estable
+  config = function()
+    require("nvim-surround").setup({})
+  end
+})
 use({
   "utilyre/barbecue.nvim",
   tag = "*",
@@ -37,6 +46,14 @@ use ({
 		{'saadparwaiz1/cmp_luasnip'},
 		{'rafamadriz/friendly-snippets'}, -- Optional
 	}
+})
+use({
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  }
 })
 end)
 
