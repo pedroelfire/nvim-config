@@ -3,21 +3,12 @@ lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
+  vim.keymap.set('n', '<leader>i', vim.lsp.buf.code_action, { noremap = true, silent = true })
 
   -- Mapear un comando para formatear manualmente
   vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format({ async = true })
   end, opts)
-
-  -- Si el servidor soporta formateo, actívalo al guardar
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({ async = false })
-      end,
-    })
-  end
 end)
 
 lsp.ensure_installed({

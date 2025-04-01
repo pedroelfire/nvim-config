@@ -5,12 +5,24 @@ return require('packer').startup(function(use)
 	use{ 'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	requires = { {'nvim-lua/plenary.nvim'} }
 }
-use({ 'rose-pine/neovim', as = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine') end })
+use({ 'rose-pine/neovim', as = 'rose-pine'})
+use({ 'sainnhe/gruvbox-material', 
+  as = 'gruvbox-material', 
+  config = function() vim.cmd('colorscheme gruvbox-material') end
+})
 use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
-use('github/copilot.vim')
+use({
+  "utilyre/barbecue.nvim",
+  tag = "*",
+  requires = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  after = "nvim-web-devicons"
+})
 use ({
 	'VonHeikemen/lsp-zero.nvim',
 	branch = 'v1.x',
