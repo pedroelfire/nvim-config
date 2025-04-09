@@ -13,6 +13,7 @@ end)
 
 lsp.ensure_installed({
     'eslint',
+    'angularls',
     'ts_ls',
     'html',
     'ast_grep'

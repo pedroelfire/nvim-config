@@ -14,6 +14,9 @@ use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
+use (
+  "tpope/vim-surround"
+)
 use({
   "utilyre/barbecue.nvim",
   tag = "*",
