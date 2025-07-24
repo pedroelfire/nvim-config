@@ -26,11 +26,13 @@ use({
   },
   after = "nvim-web-devicons"
 })
+use({
+  "nvimtools/none-ls.nvim",
+  requires = { "nvim-lua/plenary.nvim" }
+})
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig'}
-  
-  -- Autocompletado
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-nvim-lsp'}
   use {'hrsh7th/cmp-buffer'}

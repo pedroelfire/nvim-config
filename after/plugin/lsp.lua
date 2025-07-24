@@ -9,7 +9,6 @@ mason_lsp.setup({
   ensure_installed = {
     'eslint',
     'angularls',
-    'tsserver',
     'html',
     'astro',
     'ast_grep'
@@ -22,7 +21,16 @@ mason_lsp.setup_handlers({
     lsp[server_name].setup({})
   end,
 })
-
+lsp.html.setup({
+  filetypes = { "html", "htmlangular" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    },
+  }
+})
 -- Configuración de autocompletado
 local cmp = require('cmp')
 cmp.setup({
@@ -45,8 +53,6 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
--- Atajos de teclado LSP
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     vim.lsp.get_client_by_id(args.data.client_id)
