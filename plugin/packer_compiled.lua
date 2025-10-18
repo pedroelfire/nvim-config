@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
+local package_path_str = "/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/pedroelfire/.cache/nvim/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -85,6 +85,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
+  },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -121,8 +126,12 @@ _G.packer_plugins = {
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvi"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/gitsigns.nvi",
+    url = "https://github.com/lewis6991/gitsigns.nvi"
+  },
   ["gruvbox-material"] = {
-    config = { "\27LJ\2\n@\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0!colorscheme gruvbox-material\bcmd\bvim\0" },
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
@@ -131,6 +140,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -142,15 +166,30 @@ _G.packer_plugins = {
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["none-ls.nvim"] = {
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
     url = "https://github.com/nvimtools/none-ls.nvim"
   },
+  ["numb.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/numb.nvim",
+    url = "https://github.com/nacro90/numb.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-cursorword"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-cursorword",
+    url = "https://github.com/xiyaowong/nvim-cursorword"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -162,10 +201,20 @@ _G.packer_plugins = {
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-navic",
     url = "https://github.com/SmiteshP/nvim-navic"
   },
+  ["nvim-scrollbar"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-deviconn"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/nvim-web-deviconn",
+    url = "https://github.com/nvim-tree/nvim-web-deviconn"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -192,6 +241,11 @@ _G.packer_plugins = {
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/pedroelfire/.local/share/nvim/site/pack/packer/start/undotree",
@@ -210,10 +264,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gruvbox-material
-time([[Config for gruvbox-material]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0!colorscheme gruvbox-material\bcmd\bvim\0", "config", "gruvbox-material")
-time([[Config for gruvbox-material]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-web-devicons ]]

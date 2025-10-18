@@ -7,9 +7,6 @@ return require("packer").startup(function(use)
 	use({
 		"sainnhe/gruvbox-material",
 		as = "gruvbox-material",
-		config = function()
-			vim.cmd("colorscheme gruvbox-material")
-		end,
 	})
 	use({ "sainnhe/everforest", as = "everforest" })
 	use("nvim-treesitter/nvim-treesitter", { run = "TSUpdate" })
@@ -22,17 +19,16 @@ return require("packer").startup(function(use)
 		tag = "*",
 		requires = {
 			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
+			"nvim-tree/nvim-web-devicons",
 		},
 		after = "nvim-web-devicons",
 	})
 	use({
-		"nvimtools/none-ls.nvim", -- Anteriormente null-ls
+		"nvimtools/none-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use({
-		"nvimtools/none-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
+		"folke/tokyonight.nvim",
 	})
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
@@ -45,4 +41,27 @@ return require("packer").startup(function(use)
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "saadparwaiz1/cmp_luasnip" })
 	use({ "rafamadriz/friendly-snippets" })
+	use({
+		"nvim-lualine/lualine.nvim",
+	})
+
+	use("lukas-reineke/indent-blankline.nvim")
+
+	use("onsails/lspkind.nvim")
+
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "*",
+		requires = "nvim-tree/nvim-web-deviconn",
+	})
+
+	use("petertriho/nvim-scrollbar")
+
+	use("nacro90/numb.nvim")
+
+	use("xiyaowong/nvim-cursorword")
+
+	use("lewis6991/gitsigns.nvi")
+
+	use("karb94/neoscroll.nvim")
 end)
