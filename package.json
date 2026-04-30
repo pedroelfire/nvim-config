@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@angular/language-server": "^20.2.2",
+    "@angular/language-service": "^20.3.4",
+    "typescript": "^5.9.3"
+  }
+}
