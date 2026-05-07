@@ -1,5 +1,3 @@
----@diagnostic disable-next-line: undefined-global
-local vim = vim
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local null_ls = require("null-ls")
@@ -11,6 +9,8 @@ mason_lsp.setup({
 		"html",
 		"astro",
 		"ast_grep",
+		"jdtls",
+		"lemminx",
 	},
 })
 
@@ -19,6 +19,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.google_java_format,
 	},
 })
 
@@ -73,6 +74,19 @@ else
 end
 
 vim.lsp.enable("angularls")
+
+vim.lsp.config("java_language_server", {
+	handlers = {
+		["client/registerCapability"] = function(err, result, ctx, config)
+			if result == nil then
+				return
+			end
+			return vim.lsp.handlers["client/registerCapability"](err, result, ctx, config)
+		end,
+	},
+})
+
+vim.lsp.enable("java_language_server")
 
 vim.lsp.config("gopls", {
 	settings = {

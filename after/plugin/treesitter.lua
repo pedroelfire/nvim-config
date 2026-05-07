@@ -1,12 +1,15 @@
-require("nvim-treesitter").setup({
-	ensure_installed = { "go", "javascript", "typescript", "lua", "html", "markdown", "markdown_inline" },
+require("nvim-treesitter.configs").setup({
+
+	ensure_installed = { "python", "lua", "javascript", "typescript", "go", "html", "markdown" },
 
 	sync_install = false,
-
 	auto_install = true,
 
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = true,
+		additional_vim_regex_highlighting = false,
+	},
+	indent = {
+		enable = true,
 	},
 })
